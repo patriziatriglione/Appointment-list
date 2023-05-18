@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./Header";
+import { Container } from "reactstrap";
+import Appointments from "./Appointments";
+import ListAppo from "./ListAppo";
+import { useState } from "react";
+import Footer from "./Footer";
 
-function App() {
+
+export default function MyApp() {
+  const [showAppoint, setShowAppoint] = useState (false);
+  const [tasks, setTasks] = useState([])
+  // add Task
+  function addTask (task) {
+    const id= Math.floor(Math.random() * 1000) + 1
+    const newTask = {id, ...task}
+    setTasks([...tasks, newTask])
+  };
+// delete Task
+function deleteTask (id) {
+  setTasks(tasks.filter((task) => task.id !== id  ))
+};
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container 
+     className=" border"
+     fluid="lg" > 
+    <Header onAdd={() => setShowAppoint(!showAppoint)}
+      showAdd={showAppoint}  
+       />
+    {showAppoint && <Appointments onAdd={addTask} /> }
+    <ListAppo tasks={tasks} onDelete={deleteTask} />
+    <Footer />
+    </Container>
   );
 }
-
-export default App;
