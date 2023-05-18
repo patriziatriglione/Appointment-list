@@ -78,7 +78,7 @@ export default function Appointments ({onAdd}) {
          </Row>
          <Row>
                 <Col xs="5" className="text-center my-2">
-            <Label for="place">Wo?</Label>
+            <Label for="place">Who?</Label>
             </Col>
             <Col xs="6">
         <Input 
