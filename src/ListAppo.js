@@ -1,5 +1,5 @@
 import Task from "./task";
-
+// mapping of the various appointments
 export default function ListAppo ({tasks, onDelete}) {
   return (
     <>

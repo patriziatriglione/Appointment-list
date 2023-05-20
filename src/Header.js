@@ -1,5 +1,5 @@
 import { Button } from "reactstrap";
-
+// Header and button control to hide or not the form
 export default function Header ({onAdd, showAdd}) {
     let text = showAdd ? "Close" : "Add appointment";
     return (

@@ -1,6 +1,6 @@
 import { CardHeader, CardBody,CardText, Card, CardFooter } from "reactstrap";
 import {MdCancel} from "react-icons/md";
-
+// component of the single appointment
 export default function Task ({task, onDelete}) {
     return (
 <>

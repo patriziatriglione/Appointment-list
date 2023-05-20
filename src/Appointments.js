@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Button, Input, Form, Label, Row, Col } from "reactstrap";
 
+// form to add the appointment
 export default function Appointments ({onAdd}) {
     const [formData, setFormData] = useState({
         appointment:"", datum:"", place:"", hour:"", important:false,
     })
-
+//button to print data and delete them from the form
     const onSubmit = (e) => {
         e.preventDefault()
         const {appointment, datum, place, hour, important} = formData;
@@ -18,7 +19,7 @@ export default function Appointments ({onAdd}) {
             important: false,
           });
     };
-
+// form data with related value/checked control
     function handleChange(e) {
         const {name, value, type, checked} = e.target
         setFormData(prevData => {
